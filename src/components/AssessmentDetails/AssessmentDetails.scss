@@ -1,0 +1,45 @@
+.assessment-details-container {
+    --input-height: 45px;
+
+    width: 500px;
+
+    .inputs-container {
+        flex: 1;
+
+        display: flex;
+
+
+        input {
+            flex: 1;
+
+            margin-top: 0;
+        }
+
+        p {
+            line-height: var(--input-height);
+            margin: 0;
+            padding: 0 10px;
+
+            box-sizing: border-box;
+
+            font-size: 25px;
+            color: white;
+        }
+    }
+
+    input {
+        display: block;
+
+        min-width: 0%;
+        width: 100%;
+        min-height: var(--input-height);
+        margin-top: 10px;
+        padding: 0;
+
+        text-align: center;
+        font-size: 25px;
+
+        border: none;
+        border-radius: 5px;
+    }
+}
