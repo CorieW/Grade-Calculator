@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './CreateAssessmentPage.scss';
+import './styles/CreateAssessmentPage.scss';
 import Nav from '../../components/Nav/Nav.js';
-import SideGradeViewer from '../../components/SideGradeViewer/SideGradeViewer.js';
+import GradeViewer from '../../components/GradeViewer/GradeViewer.js';
 import AssessmentDetails from '../../components/AssessmentDetails/AssessmentDetails.js'
 import $ from 'jquery';
 
@@ -19,7 +19,7 @@ function CreateAssessmentPage() {
   // Disables/enables the remove button depending on number of current assessments
   function updateRemoveBtn()
   {
-    if (assessments.length == 1) $("#remove-assessment")[0].disabled = true
+    if (assessments.length === 1) $("#remove-assessment")[0].disabled = true
     else $("#remove-assessment")[0].disabled = false
 
     return ( <></> );
@@ -49,14 +49,17 @@ function CreateAssessmentPage() {
 
     for (let i = 0; i < weighingElements.length; i++)
     {
+      const studentMark = studentMarkElements[i].value
+      const maxMark = maxMarkElements[i].value
       const weighing = weighingElements[i].value / 100
-      totPercent += (studentMarkElements[i].value / maxMarkElements[i].value) * weighing
+      
+      totPercent += (Math.min(studentMark, maxMark) / maxMark) * weighing
       totWeighing += weighing
     }
 
     let num = totPercent * (100 / totWeighing);
     num = Math.max(Math.min(num, 100), 0).toFixed(1)
-    if (num == null || num == undefined || isNaN(num)) return;
+    if (num === null || num === undefined || isNaN(num)) return;
 
     setCalculatedPercent(num)
     updateGrade(num)
@@ -112,7 +115,7 @@ function CreateAssessmentPage() {
             </div>
           </div>
       </div>
-      <SideGradeViewer calculatedPercent={calculatedPercent} grade={grade}/>
+      <GradeViewer calculatedPercent={calculatedPercent} grade={grade}/>
     </div>
   );
 }

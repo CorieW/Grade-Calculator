@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './AssessmentDetails.scss';
+import './styles/AssessmentDetails.scss';
 
 function AssessmentDetails(props) {
   return (
