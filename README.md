@@ -1,7 +1,7 @@
 # Info
 A simple calculator to calculate overall grades. Specific for Northumbria University right now.
 
-[Website](https://app.netlify.com/sites/northumbria-uni-grade-calculator/deploys)
+[Website](https://northumbria-uni-grade-calculator.netlify.app/)
 
 # Todo
 - Add format creation so that filling out details is further specified. Users should be able to create formats already configured for modules/assessment, with prior established values for things like weighings, max marks, and module/assessment names.
