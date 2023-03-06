@@ -1,6 +1,8 @@
 # Info
 A simple calculator to calculate overall grades. Specific for Northumbria University right now.
 
+Find at: https://github.com/CorieW/Grade-Calculator/blob/master/README.md
+
 # Todo
 - Add format creation so that filling out details is further specified. Users should be able to create formats already configured for modules/assessment, with prior established values for things like weighings, max marks, and module/assessment names.
 - Format search at root path.
